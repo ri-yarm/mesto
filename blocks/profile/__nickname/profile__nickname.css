@@ -1,0 +1,15 @@
+.profile__nickname {
+  max-width: calc(100% - 20px * 2);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 8px;
+  padding: 0;
+}
+
+@media screen and (min-width: 1280px) {
+  .profile__nickname {
+    max-width: 100%;
+  }
+}

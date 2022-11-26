@@ -1,0 +1,18 @@
+.places__list {
+  box-sizing: border-box;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-auto-columns: 1fr;
+  gap: 20px 0;
+}
+
+@media screen and (min-width: 1280px) {
+  .places__list {
+    grid-template-columns: 1fr 1fr 1fr;
+    /* на будущее) */
+    grid-auto-columns: auto;
+    gap: 20px 18px;
+  }
+}

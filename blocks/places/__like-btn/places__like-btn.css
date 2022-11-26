@@ -1,0 +1,8 @@
+.places__like-btn {
+  position: absolute;
+  right: 0;
+  bottom: 30px;
+  width: 22px;
+  height: 28px;
+  background: url(../../../images/places__likeButton.svg) no-repeat center / contain;
+}

@@ -1,0 +1,11 @@
+.places {
+  max-width: calc(100% - 20px * 2);
+  margin: 0 auto 48px;
+}
+
+@media screen and (min-width: 1280px) {
+  .places {
+    max-width: calc(100% - 200px * 2);
+    margin: 0 auto 60px;
+  }
+}

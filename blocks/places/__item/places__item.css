@@ -1,0 +1,7 @@
+.places__item {
+  box-sizing: border-box;
+  background-color: #fff;
+  border-radius: 10px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
