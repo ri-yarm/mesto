@@ -6,3 +6,9 @@
   height: 28px;
   background: url(../../../images/places__likeButton.svg) no-repeat center / contain;
 }
+
+.places__like-btn:active {
+  background-color: #000;
+  background: url(../../../images/places__likeButtonActive.svg) no-repeat center / contain;
+
+}
