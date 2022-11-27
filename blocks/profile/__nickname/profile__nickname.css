@@ -1,5 +1,5 @@
 .profile__nickname {
-  max-width: calc(100% - 20px * 2);
+  max-width: fit-content;
   display: flex;
   position: relative;
   justify-content: center;

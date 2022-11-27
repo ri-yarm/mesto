@@ -8,11 +8,16 @@
   gap: 20px 0;
 }
 
+@media screen and (min-width: 800px) {
+  .places__list {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 14px;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   .places__list {
     grid-template-columns: 1fr 1fr 1fr;
-    /* на будущее) */
-    grid-auto-columns: auto;
     gap: 20px 18px;
   }
 }

@@ -1,4 +1,7 @@
 .profile__edit-profile {
+  position: absolute;
+  right: -25px;
+  bottom: 5px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,5 +14,7 @@
   .profile__edit-profile {
     width: 22px;
     height: 22px;
+    right: -35px;
+    bottom: 10px;
   }
 }
