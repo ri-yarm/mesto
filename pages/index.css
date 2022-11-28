@@ -12,20 +12,31 @@
 @import url(../blocks/header/__logo/header__logo.css);
 /* /header */
 
-/* main */
-/* @import url(../blocks/content!!!!); */
-/* /main */
-
 /* profile */
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__info/profile__info.css);
 @import url(../blocks/profile/__nickname/profile__nickname.css);
 @import url(../blocks/profile/__title/profile__title.css);
-@import url(../blocks/profile/__edit-profile/profile__edit-profile.css);
+@import url(../blocks/profile/__edit-button/profile__edit-button.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 /* /profile */
+
+/* places */
+@import url(../blocks/places/places.css);
+@import url(../blocks/places/__wrapper/places__wrapper.css);
+@import url(../blocks/places/__card/places__card.css);
+@import url(../blocks/places/__image/places__image.css);
+@import url(../blocks/places/__ctrl-wrapper/places__ctrl-wrapper.css);
+@import url(../blocks/places/__title/places__title.css);
+@import url(../blocks/places/__like-btn/places__like-btn.css);
+/* /places */
+
+/* footer */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
+/* /footer */
 
 
 /* popup */
@@ -39,24 +50,5 @@
 @import url(../blocks/form/form.css);
 @import url(../blocks/form/__name/form__name.css);
 @import url(../blocks/form/__job/form__job.css);
-@import url(../blocks/form/__submit/form__submit.css);
+@import url(../blocks/form/__submit-button/form__submit-button.css);
 /* /form */
-
-
-/* places */
-@import url(../blocks/places/places.css);
-@import url(../blocks/places/__list/places__list.css);
-@import url(../blocks/places/__item/places__item.css);
-@import url(../blocks/places/__image/places__image.css);
-@import url(../blocks/places/__ctrl-wrapper/places__ctrl-wrapper.css);
-@import url(../blocks/places/__title/places__title.css);
-@import url(../blocks/places/__like-btn/places__like-btn.css);
-/* /places */
-
-/* footer */
-@import url(../blocks/footer/footer.css);
-@import url(../blocks/footer/__text/footer__text.css);
-/* /footer */
-
-
-

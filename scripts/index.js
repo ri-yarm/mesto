@@ -1,50 +1,39 @@
-const Popup = document.querySelector('.popup');
-const PopupContainer = Popup.querySelector('.popup__container');
-const Profile = document.querySelector('.profile');
-const ProfileName = Profile.querySelector('.profile__title');
-const ProfileJob = Profile.querySelector('.profile__subtitle');
+const popup = document.querySelector('.popup'),
+      popupExitButton = popup.querySelector('.popup__exit-button'),
+      form = document.querySelector('.form'),
+      formSubmitButton = form.querySelector('.form-submit-button'),
+      profileEditButton = document.querySelector('.profile__edit-button'),
+      inputName = form.querySelector('.form__name'),
+      inputJob = form.querySelector('.form__job'),
+      profileTitle = document.querySelector('.profile__title'),
+      profileSubtitle = document.querySelector('.profile__subtitle');
 
-const ClosePopupButton = Popup.querySelector('.popup__exit-button');
-const ProfileButton = Profile.querySelector('.profile__edit-profile');
+function PopupShowOrDown() {
+  popup.classList.toggle('popup_opened');
+  inputName.value = profileTitle.textContent;
+  inputJob.value = profileSubtitle.textContent;
+}
+// Открыть или Закрыть попап
+profileEditButton.addEventListener('click', () => {
+  PopupShowOrDown();
+});
+popupExitButton.addEventListener('click', () => {
+  PopupShowOrDown();
+});
+// Закрытие попапа вне его области
+popup.addEventListener('click', (e) => {
+  if(e.target === e.currentTarget) {
+    PopupShowOrDown();
+  }
+})
 
 
-function closePopup() {
-  Popup.classList.remove('popup_opened');
+//изменение пррфиля
+function submitFormSend(event) {
+  event.preventDefault();
+  profileTitle.textContent = inputName.value;
+  profileSubtitle.textContent = inputJob.value;
+  PopupShowOrDown();
 }
 
-// открыть закрыть попап
-ProfileButton.addEventListener('click', () => {
-  Popup.classList.add('popup_opened');
-});
-
-ClosePopupButton.addEventListener('click', () => {
-  closePopup();
-});
-
-
-
-// Закрытия попапа в любой области кроме контейнера
-Popup.addEventListener('click', (e) => {
-  if(!e.defaultPrevented) {
-    closePopup();
-  }
-});
-PopupContainer.addEventListener('click', (e) => {
-  e.preventDefault();
-});
-
-//form
-const Form = Popup.querySelector('.form');
-const InputName = Form.querySelector('.form__name');
-const InputJob = Form.querySelector('.form__job');
-const FormSubmit = Form.querySelector('.form__submit');
-
-
-InputName.value = ProfileName.textContent
-InputJob.value = ProfileJob.textContent
-
-FormSubmit.addEventListener('click', (e) => {
-  ProfileName.textContent = InputName.value;
-  ProfileJob.textContent = InputJob.value;
-  closePopup();
-});
+form.addEventListener('submit', submitFormSend);
