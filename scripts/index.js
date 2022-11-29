@@ -8,29 +8,17 @@ const popup = document.querySelector('.popup'),
       profileTitle = document.querySelector('.profile__title'),
       profileSubtitle = document.querySelector('.profile__subtitle');
 
-function PopupShowOrDown() {
-  popup.classList.toggle('popup_opened');
+function showPopup() {
+  popup.classList.add('popup_opened');
   inputName.value = profileTitle.textContent;
   inputJob.value = profileSubtitle.textContent;
 }
+function closePopup() {
+  popup.classList.remove('popup_opened');
+}
 // Открыть или Закрыть попап
-profileEditButton.addEventListener('click', () => {
-  PopupShowOrDown();
-});
-popupExitButton.addEventListener('click', () => {
-  PopupShowOrDown();
-});
-// Закрытие попапа вне его области
-<<<<<<< HEAD
-popup.addEventListener('click', (e) => {
-  if(e.target === e.currentTarget) {
-=======
-popup.addEventListener('click', (event) => {
-  if(event.target === event.currentTarget) {
->>>>>>> hotfix/index
-    PopupShowOrDown();
-  }
-})
+profileEditButton.addEventListener('click', showPopup);
+popupExitButton.addEventListener('click', closePopup);
 
 
 //изменение пррфиля
@@ -38,7 +26,7 @@ function submitFormSend(event) {
   event.preventDefault();
   profileTitle.textContent = inputName.value;
   profileSubtitle.textContent = inputJob.value;
-  PopupShowOrDown();
+  closePopup()
 }
 
 form.addEventListener('submit', submitFormSend);
