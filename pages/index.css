@@ -6,6 +6,8 @@
 @import url(../blocks/page/__container/page__container.css);
 
 @import url(../blocks/button/button.css);
+@import url(../blocks/input/input.css);
+
 
 /* header */
 @import url(../blocks/header/header.css);
@@ -23,15 +25,15 @@
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 /* /profile */
 
-/* places */
+/* card */
 @import url(../blocks/places/places.css);
-@import url(../blocks/places/__wrapper/places__wrapper.css);
-@import url(../blocks/places/__card/places__card.css);
-@import url(../blocks/places/__image/places__image.css);
-@import url(../blocks/places/__ctrl-wrapper/places__ctrl-wrapper.css);
-@import url(../blocks/places/__title/places__title.css);
-@import url(../blocks/places/__like-btn/places__like-btn.css);
-/* /places */
+
+@import url(../blocks/card/card.css);
+@import url(../blocks/card/__image/card__image.css);
+@import url(../blocks/card/__ctrl-wrapper/card__ctrl-wrapper.css);
+@import url(../blocks/card/__title/card__title.css);
+@import url(../blocks/card/__like-btn/card__like-btn.css);
+/* /card */
 
 /* footer */
 @import url(../blocks/footer/footer.css);
@@ -48,7 +50,5 @@
 /* /popup */
 /* form */
 @import url(../blocks/form/form.css);
-@import url(../blocks/form/__name/form__name.css);
-@import url(../blocks/form/__job/form__job.css);
 @import url(../blocks/form/__submit-button/form__submit-button.css);
 /* /form */
