@@ -1,5 +1,9 @@
 .popup__container {
+<<<<<<< HEAD
   /* box-sizing: border-box; */
+=======
+  box-sizing: border-box;
+>>>>>>> hotfix/index
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -8,7 +12,10 @@
   margin: 0 auto;
   padding: 26px 22px 22px 22px;
   border-radius: 8px;
+<<<<<<< HEAD
   min-height: 330px;
+=======
+>>>>>>> hotfix/index
   position: relative;
 }
 

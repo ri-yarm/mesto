@@ -21,8 +21,13 @@ popupExitButton.addEventListener('click', () => {
   PopupShowOrDown();
 });
 // Закрытие попапа вне его области
+<<<<<<< HEAD
 popup.addEventListener('click', (e) => {
   if(e.target === e.currentTarget) {
+=======
+popup.addEventListener('click', (event) => {
+  if(event.target === event.currentTarget) {
+>>>>>>> hotfix/index
     PopupShowOrDown();
   }
 })
