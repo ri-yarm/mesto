@@ -1,16 +1,11 @@
 .form__submit-button {
-<<<<<<< HEAD
-=======
   border: none;
->>>>>>> hotfix/index
   margin: 0;
   padding: 0;
   border-radius: 2px;
   min-height: 46px;
   color: #fff;
   background-color: #000;
-<<<<<<< HEAD
-=======
   font-size: 14px;
   line-height: 1.21;
 }
@@ -20,5 +15,4 @@
     font-size: 18px;
     line-height: 1.22;
   }
->>>>>>> hotfix/index
 }

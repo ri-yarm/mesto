@@ -1,8 +1,4 @@
-<<<<<<<< HEAD:blocks/places/__card/places__card.css
-.places__card {
-========
 .card {
->>>>>>>> hotfix/index:blocks/card/card.css
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 10px;
