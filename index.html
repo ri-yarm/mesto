@@ -21,53 +21,53 @@
         <div class="profile__info">
           <div class="profile__nickname">
             <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button button"></button>
+            <button class="profile__edit-button button" aria-label="Edit your profile"></button>
           </div>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__add-button button"></button>
+        <button class="profile__add-button button" aria-label="Add post"></button>
       </section>
       <section class="places">
           <article class="card">
             <img class="card__image" src="images/card__image-karachaevsk.jpg" alt=" Старый Монастырь на фоне предгорья.">
             <div class="card__ctrl-wrapper">
               <h2 class="card__title">Карачаевск</h2>
-              <button class="card__like-btn button"></button>
+              <button class="card__like-btn button" aria-label="like this"></button>
             </div>
           </article>
           <article class="card">
             <img class="card__image" src="images/card__image-mountainElbrus.jpg" alt=" Горные цепи на фоне которых находится гора Эльбрус.">
             <div class="card__ctrl-wrapper">
               <h2 class="card__title">Гора Эльбрус</h2>
-              <button class="card__like-btn button"></button>
+              <button class="card__like-btn button" aria-label="like this"></button>
             </div>
           </article>
           <article class="card">
             <img class="card__image" src="images/card__image-dombai.jpg" alt=" Крутая гора Покрытая снегом возвышается над лесом">
             <div class="card__ctrl-wrapper">
               <h2 class="card__title">Домбай</h2>
-              <button class="card__like-btn button"></button>
+              <button class="card__like-btn button" aria-label="like this"></button>
             </div>
           </article>
           <article class="card">
             <img class="card__image" src="images/card__image-mountainElbrus.jpg" alt=" Горные цепи на фоне которых находится гора Эльбрус.">
             <div class="card__ctrl-wrapper">
               <h2 class="card__title">Гора Эльбрус</h2>
-              <button class="card__like-btn button"></button>
+              <button class="card__like-btn button" aria-label="like this"></button>
             </div>
           </article>
           <article class="card">
             <img class="card__image" src="images/card__image-dombai.jpg" alt=" Крутая гора Покрытая снегом возвышается над лесом">
             <div class="card__ctrl-wrapper">
               <h2 class="card__title">Домбай</h2>
-              <button class="card__like-btn button"></button>
+              <button class="card__like-btn button" aria-label="like this"></button>
             </div>
           </article>
           <article class="card">
             <img class="card__image" src="images/card__image-karachaevsk.jpg" alt=" Старый Монастырь на фоне предгорья.">
             <div class="card__ctrl-wrapper">
               <h2 class="card__title">Карачаево-Черкессия</h2>
-              <button class="card__like-btn button"></button>
+              <button class="card__like-btn button" aria-label="like this"></button>
             </div>
           </article>
       </section>
@@ -77,11 +77,11 @@
     </footer>
     <div class="popup">
       <div class="popup__container">
-        <button class="button popup__exit-button"></button>
+        <button class="button popup__exit-button" aria-label="Close opup"></button>
         <h2 class="popup__title">Редактировать профиль</h2>
         <form action="#" class="form" name="popupForm" autocomplete="on" novalidate>
-          <input type="text" class="input form__name">
-          <input type="text" class="input form__job">
+          <input type="text" class="input form__name" placeholder="your nickname" required>
+          <input type="text" class="input form__job" placeholder="your hobby" required>
           <input type="submit" class="form__submit-button button" value="Сохранить">
         </form>
       </div>
