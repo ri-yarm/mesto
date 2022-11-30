@@ -3,8 +3,8 @@ const popup = document.querySelector('.popup'),
       form = document.querySelector('.form'),
       formSubmitButton = form.querySelector('.form-submit-button'),
       profileEditButton = document.querySelector('.profile__edit-button'),
-      inputName = form.querySelector('.form__name'),
-      inputJob = form.querySelector('.form__job'),
+      inputName = form.querySelector('.form__input_type_name'),
+      inputJob = form.querySelector('.form__input_type_job'),
       profileTitle = document.querySelector('.profile__title'),
       profileSubtitle = document.querySelector('.profile__subtitle');
 
@@ -26,7 +26,7 @@ function submitFormSend(event) {
   event.preventDefault();
   profileTitle.textContent = inputName.value;
   profileSubtitle.textContent = inputJob.value;
-  closePopup()
+  closePopup();
 }
 
 form.addEventListener('submit', submitFormSend);

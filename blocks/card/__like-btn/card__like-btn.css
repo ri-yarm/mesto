@@ -8,3 +8,7 @@
   background-color: #000;
   background: url(../../../images/places__likeButtonActive.svg) no-repeat center / contain;
 }
+
+.card__like-btn:hover {
+  opacity: .5;
+}
