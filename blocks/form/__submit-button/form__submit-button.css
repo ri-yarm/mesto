@@ -10,6 +10,10 @@
   line-height: 1.21;
 }
 
+.form__submit-button:hover  {
+  opacity: .8;
+}
+
 @media screen and (min-width: 800px) {
   .form__submit-button {
     font-size: 18px;
