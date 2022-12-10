@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
   <link rel="stylesheet" href="pages/index.css">
+  <!-- загрузка массива карточек -->
+  <script src="scripts/defaultCards.js" async></script>
   <title>Mesto</title>
 </head>
 <body class="page">
@@ -28,48 +30,15 @@
         <button type="button" class="profile__add-button button" aria-label=" Добавить пост."></button>
       </section>
       <section class="places">
-          <article class="card">
-            <img class="card__image" src="images/card__image-karachaevsk.jpg" alt=" Старый Монастырь на фоне предгорья.">
-            <div class="card__ctrl-wrapper">
-              <h2 class="card__title">Карачаевск</h2>
-              <button type="button" class="card__like-btn button" aria-label=" Поставить лайк."></button>
-            </div>
-          </article>
-          <article class="card">
-            <img class="card__image" src="images/card__image-mountainElbrus.jpg" alt=" Горные цепи на фоне которых находится гора Эльбрус.">
-            <div class="card__ctrl-wrapper">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button type="button" class="card__like-btn button" aria-label=" Поставить лайк."></button>
-            </div>
-          </article>
-          <article class="card">
-            <img class="card__image" src="images/card__image-dombai.jpg" alt=" Крутая гора Покрытая снегом возвышается над лесом">
-            <div class="card__ctrl-wrapper">
-              <h2 class="card__title">Домбай</h2>
-              <button type="button" class="card__like-btn button" aria-label=" Поставить лайк."></button>
-            </div>
-          </article>
-          <article class="card">
-            <img class="card__image" src="images/card__image-mountainElbrus.jpg" alt=" Горные цепи на фоне которых находится гора Эльбрус.">
-            <div class="card__ctrl-wrapper">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button type="button" class="card__like-btn button" aria-label=" Поставить лайк."></button>
-            </div>
-          </article>
-          <article class="card">
-            <img class="card__image" src="images/card__image-dombai.jpg" alt=" Крутая гора Покрытая снегом возвышается над лесом">
-            <div class="card__ctrl-wrapper">
-              <h2 class="card__title">Домбай</h2>
-              <button type="button" class="card__like-btn button" aria-label=" Поставить лайк."></button>
-            </div>
-          </article>
-          <article class="card">
-            <img class="card__image" src="images/card__image-karachaevsk.jpg" alt=" Старый Монастырь на фоне предгорья.">
-            <div class="card__ctrl-wrapper">
-              <h2 class="card__title">Карачаево-Черкессия</h2>
-              <button type="button" class="card__like-btn button" aria-label=" Поставить лайк."></button>
-            </div>
-          </article>
+          <template id="template-cards">
+            <article class="card">
+              <img class="card__image" src="" alt="">
+              <div class="card__ctrl-wrapper">
+                <h2 class="card__title"></h2>
+                <button type="button" class="card__like-btn button" aria-label=" Поставить лайк."></button>
+              </div>
+            </article>
+          </template>
       </section>
     </main>
     <footer class="footer">

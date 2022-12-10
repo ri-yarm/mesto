@@ -30,3 +30,28 @@ function submitFormSend(event) {
 }
 
 form.addEventListener('submit', submitFormSend);
+
+//загрузка дефолтных карточек
+const sectionPlaces = document.querySelector('.places'),
+      template = document.getElementById('template-cards').content.querySelector('.card');
+
+function addDefaultCards(elements) {
+  elements.forEach(({name, link}) => { 
+    sectionPlaces.append(createCard(name, link));
+  })
+}
+
+//создать карточку
+function createCard(name, link) {
+  const cards = template.cloneNode(true);
+        cardsImage = cards.querySelector('.card__image');
+        cardsTitle = cards.querySelector('.card__title');
+
+  cardsTitle.textContent = name;
+  cardsImage.src = link;
+  cardsImage.alt = ` ${name}.`;
+
+  return cards;
+}
+
+addDefaultCards(defaultCards);
