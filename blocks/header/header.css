@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 28px 0 26px;
   margin: 0 0 42px;
+  flex: 0 0 auto;
 }
 
 @media screen and (min-width: 1280px) {
