@@ -5,8 +5,7 @@ const profile = document.querySelector('.profile'),
       btnAddCard = profile.querySelector('.profile__add-button');
       
 
-const btnClose = document.querySelectorAll('.popup__exit-button'),
-      btnLike = document.querySelectorAll('.card__like-btn');
+const btnsClose = document.querySelectorAll('.popup__exit-button');
 
 //попап редактирования профиля
 const popupProfile = document.querySelector('.popup'),
@@ -64,10 +63,10 @@ btnAddCard.addEventListener('click', () => {
 });
 
 //попап зума карточек
-function cardZoom(name, link) {
-  const popupImage = popupZoom.querySelector('.popup__image'),
-        popupCaption = popupZoom.querySelector('.popup__caption');
+const popupImage = popupZoom.querySelector('.popup__image'),
+      popupCaption = popupZoom.querySelector('.popup__caption');
 
+function zoomCard(name, link) {
   popupImage.src = link;
   popupImage.alt = ` ${name}.`;
   popupCaption.textContent = name;
@@ -88,6 +87,16 @@ function rewriteCardSubmit(event) {
 }
 cardForm.addEventListener('submit', rewriteCardSubmit);
 
+function likeCard(item) {
+  const currentItem = item.target;
+  currentItem.classList.toggle('card__like-btn_active')
+}
+
+function deleteCard(card) {
+  card.remove();
+}
+cardForm.addEventListener('submit', rewriteCardSubmit);
+
 
 //создать карточку
 function createCard(name, link) {
@@ -101,18 +110,16 @@ function createCard(name, link) {
         cardImage.alt = ` ${name}.`;
         cardTitle.textContent = name;
 
-  btnCardLike.addEventListener('click', () => {
-    btnCardLike.classList.toggle('card__like-btn_active');
-  });
+  btnCardLike.addEventListener('click', likeCard);
 
   btnCardDel.addEventListener('click', () => {
-    templateContent.remove();
+    deleteCard(templateContent)
   });
 
   //открыть картинку в увеличенном масштабе
   cardImage.addEventListener('click', () => {
-    cardZoom(name, link);
-  })
+    zoomCard(name, link);
+  });
 
   return templateContent;
 }
@@ -130,7 +137,7 @@ defaultCards.forEach(({name, link}) => {
 });
 
 //закрытие попапов
-btnClose.forEach(item => {
+btnsClose.forEach(item => {
   item.addEventListener('click', event => {
     const popup = event.target.closest('.popup');
     closePopup(popup);
