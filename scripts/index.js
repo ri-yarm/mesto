@@ -95,8 +95,6 @@ function likeCard(item) {
 function deleteCard(card) {
   card.remove();
 }
-cardForm.addEventListener('submit', rewriteCardSubmit);
-
 
 //создать карточку
 function createCard(name, link) {
