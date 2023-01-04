@@ -38,9 +38,15 @@
       <div class="popup__container">
         <button type="button" class="button popup__exit-button" aria-label=" Закрыть попап."></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form action="#" class="form" name="popupForm" autocomplete="on">
-          <input name="formName" type="text" class="form__input form__input_type_name" placeholder="Введите ваше имя" required>
-          <input name="formJob" type="text" class="form__input form__input_type_job" placeholder="Введите описание" required>
+        <form action="#" class="form" name="popupForm" autocomplete="on" novalidate>
+          <label class="form__label">
+            <input id="name-input" name="formName" type="text" class="form__input form__input_type_name" placeholder="Введите ваше имя" required minlength="2" maxlength="40">
+            <span class="name-input-error form__input-error"></span>
+          </label>
+          <label class="form__label">
+            <input id="job-input" name="formJob" type="text" class="form__input form__input_type_job" placeholder="Введите описание" required minlength="2" maxlength="200">
+            <span class="job-input-error form__input-error"></span>
+          </label>
           <input type="submit" class="form__submit-button button" value="Сохранить">
         </form>
       </div>
@@ -49,9 +55,15 @@
       <div class="popup__container">
         <button type="button" class="button popup__exit-button" aria-label=" Закрыть попап."></button>
         <h2 class="popup__title">Новое Место</h2>
-        <form action="#" class="form" name="popupForm" autocomplete="on">
-          <input name="formName" type="text" class="form__input form__input_type_name" placeholder="Название" required>
-          <input name="formJob" type="text" class="form__input form__input_type_link" placeholder="Ссылка на картинку" required>
+        <form action="#" class="form" name="popupForm" autocomplete="on" novalidate>
+          <label class="form__label">
+            <input id="mesto-input" name="formMesto" type="text" class="form__input form__input_type_name" placeholder="Название" required minlength="2" maxlength="30">
+            <span class="mesto-input-error form__input-error"></span>
+          </label>
+          <label class="form__label">
+            <input id="url-input" name="formImg" type="url" class="form__input form__input_type_link" placeholder="Ссылка на картинку" required>
+            <span class="url-input-error form__input-error"></span>
+          </label>
           <input type="submit" class="form__submit-button button" value="Сохранить">
         </form>
       </div>
@@ -79,6 +91,8 @@
   </template>
   <!-- загрузка массива карточек -->
   <script src="scripts/defaultCards.js"></script>
+  <!-- валидация -->
+  <script src="scripts/validate.js"></script>
   <script src="scripts/index.js"></script>
 </body>
 </html>

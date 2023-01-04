@@ -58,6 +58,12 @@
 /* /popup */
 /* form */
 @import url(../blocks/form/form.css);
+@import url(../blocks/form/__label/form__label.css);
 @import url(../blocks/form/__submit-button/form__submit-button.css);
 @import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_type_error/form__input_type_error.css);
+@import url(../blocks/form/__submit-button/_invalid/form__submit-buttom_invalid.css);
+@import url(../blocks/form/__input-error/form__input-error.css);
+@import url(../blocks/form/__input-error/_visible/form__input-error_visible.css);
+
 /* /form */
