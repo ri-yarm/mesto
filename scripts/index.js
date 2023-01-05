@@ -27,11 +27,15 @@ const templateCards = document.querySelector('#template-cards'),
 //открыть попап
 function showPopup(popup) {
   popup.classList.add('popup_opened');
+
+  document.addEventListener('keydown', handleEsc)
 }
 
 //закрыть попап
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+
+  document.removeEventListener('keydown', handleEsc)
 }
 
 
@@ -137,34 +141,32 @@ defaultCards.forEach(({name, link}) => {
   renderCard(name, link);
 });
 
-//закрытие попапов
-btnsClose.forEach(item => {
-  item.addEventListener('click', event => {
-    // const popup = event.target.closest('.popup');
-    // closePopup(popup);
-    getPopups()
-  });
-});
-
-//перебираем попапы и закрываем попапы
-function getPopups() {
-  const popupList = Array.from(document.querySelectorAll('.popup'))
-
-  popupList.forEach(popup => {
-      closePopup(popup)
-    });
-};
-//закрытие попапов на оверлей и закрытие попапов на ESC
+const popupList = Array.from(document.querySelectorAll('.popup'))
+// закрываем попапы на escape
+function handleEsc(evt) {
+  if(evt.key === 'Escape') {
+    popupList.forEach(popup => {
+      if(popup.classList.contains('popup_opened')) {
+        closePopup(popup)
+      }
+    })
+  }
+}
+//закрытие попапов на оверлей и на кнопку
 document.addEventListener('mousedown', evt => {
   if(evt.target.classList.contains('popup')) {
-    getPopups()
+    popupList.forEach(popup => closePopup(popup))
   };
-});
-document.addEventListener('keydown', evt => {
-  if(evt.key === 'Escape') {
-    getPopups()
+  if(evt.target.classList.contains('popup__exit-button')) {
+    popupList.forEach(popup => closePopup(popup))
   };
 });
 
+//закрытие попапов
+// btnsClose.forEach(item => {
+//   item.addEventListener('click', event => {
+//     const popup = event.target.closest('.popup');
+//     closePopup(popup);
+//   });
+// });
 
-//валидация форм

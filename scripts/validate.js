@@ -1,17 +1,3 @@
-//конфиг формы 
-const configForm = {
-  form: '.form',
-  formLabel: '.popup__label',
-  formInput: '.form__input',
-  formInputError: 'form__input_type_error',
-  formSpan: '.form__input-error',
-  // formSpanVisible: '.form__input-error_visible',
-  inactiveButtonSubmit: 'form__submit-button_invalid',
-  fromButtonSubmit: '.form__submit-button',
-}
-
-enableValidation(configForm);
-
 // показать ошибку
 function showInputError(formElement, inputElement, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -30,7 +16,7 @@ function hideInputError(formElement, inputElement, config) {
   errorElement.textContent = '';
 };
 
-// проверка на валидность инпутов для spana и input
+// проверка на валидность инпута для spana и input
 function checkValidity(formElement, inputElement, config) {
   if(!inputElement.validity.valid) {
     showInputError(formElement, inputElement, config);
@@ -86,3 +72,16 @@ function enableValidation(config) {
   });
 };
 
+//конфиг формы 
+const configForm = {
+  form: '.form',
+  formLabel: '.popup__label',
+  formInput: '.form__input',
+  formInputError: 'form__input_type_error',
+  formSpan: '.form__input-error',
+  // formSpanVisible: '.form__input-error_visible',
+  inactiveButtonSubmit: 'form__submit-button_invalid',
+  fromButtonSubmit: '.form__submit-button',
+}
+
+enableValidation(configForm);
