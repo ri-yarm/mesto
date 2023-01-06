@@ -1,4 +1,4 @@
-let defaultCards = [
+const defaultCards = [
     {
       name: 'Архыз',
       link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'

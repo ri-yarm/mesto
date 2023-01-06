@@ -54,13 +54,6 @@ function setEventListeners(formElement, config) {
     checkValidity(formElement, inputElement, config);
     toggleButtonState(inputList, buttonElement, config)
   });
-  
-  // inputList.forEach(inputElement => {
-  //   inputElement.addEventListener('input', () => {
-  //     checkValidity(formElement, inputElement, config);
-  //     toggleButtonState(inputList, buttonElement, config)
-  //   });
-  // });
 };
 
 //функция включения валидации. принимает параметр *config*. 
@@ -72,16 +65,6 @@ function enableValidation(config) {
   });
 };
 
-//конфиг формы 
-const configForm = {
-  form: '.form',
-  formLabel: '.popup__label',
-  formInput: '.form__input',
-  formInputError: 'form__input_type_error',
-  formSpan: '.form__input-error',
-  // formSpanVisible: '.form__input-error_visible',
-  inactiveButtonSubmit: 'form__submit-button_invalid',
-  fromButtonSubmit: '.form__submit-button',
-}
 
-enableValidation(configForm);
+
+// enableValidation(configForm);

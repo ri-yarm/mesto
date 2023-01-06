@@ -8,13 +8,13 @@ const profile = document.querySelector('.profile'),
 const btnsClose = document.querySelectorAll('.popup__exit-button');
 
 //попап редактирования профиля
-const popupProfile = document.querySelector('#popupProfile'),
+const popupProfile = document.querySelector('.popupProfile'),
       profileForm = popupProfile.querySelector('.form'),
       inputName = profileForm.querySelector('.form__input_type_name'),
       inputJob = profileForm.querySelector('.form__input_type_job');
 
 //попап Добавления нового места
-const popupCards = document.querySelector('#popupCard'),
+const popupCards = document.querySelector('.popupCard'),
       cardForm = popupCards.querySelector('.form'),
       inputPlaceName = cardForm.querySelector('.form__input_type_name'),
       inputLink = cardForm.querySelector('.form__input_type_link');
@@ -29,6 +29,7 @@ function showPopup(popup) {
   popup.classList.add('popup_opened');
 
   document.addEventListener('keydown', handleEsc)
+  document.addEventListener('mousedown', handleExitPopup)
 }
 
 //закрыть попап
@@ -36,6 +37,7 @@ function closePopup(popup) {
   popup.classList.remove('popup_opened');
 
   document.removeEventListener('keydown', handleEsc)
+  document.removeEventListener('mousedown', handleExitPopup)
 }
 
 
@@ -60,8 +62,6 @@ profileForm.addEventListener('submit', rewriteProfileSubmit);
 
 //открытие формы нового места
 btnAddCard.addEventListener('click', () => {
-  // inputLink.value = '';
-  // inputPlaceName.value = '';
   cardForm.reset()
 
   showPopup(popupCards);
@@ -141,32 +141,39 @@ defaultCards.forEach(({name, link}) => {
   renderCard(name, link);
 });
 
-const popupList = Array.from(document.querySelectorAll('.popup'))
 // закрываем попапы на escape
 function handleEsc(evt) {
+  const openedPopup = document.querySelector('.popup_opened');
   if(evt.key === 'Escape') {
-    popupList.forEach(popup => {
-      if(popup.classList.contains('popup_opened')) {
-        closePopup(popup)
-      }
-    })
+
+    closePopup(openedPopup)
   }
 }
-//закрытие попапов на оверлей и на кнопку
-document.addEventListener('mousedown', evt => {
-  if(evt.target.classList.contains('popup')) {
-    popupList.forEach(popup => closePopup(popup))
-  };
-  if(evt.target.classList.contains('popup__exit-button')) {
-    popupList.forEach(popup => closePopup(popup))
-  };
-});
 
-//закрытие попапов
-// btnsClose.forEach(item => {
-//   item.addEventListener('click', event => {
-//     const popup = event.target.closest('.popup');
-//     closePopup(popup);
-//   });
-// });
+// закрытие попапов на оверлей и на кнопку
+  function handleExitPopup(evt) {
+  const openedPopup = document.querySelector('.popup_opened');
+
+  if((evt.target.classList.contains('popup_opened')) || (evt.target.classList.contains('popup__exit-button'))) {
+    closePopup(openedPopup)
+  }
+}
+
+
+
+
+// включение валидации
+
+//конфиг формы 
+const configForm = {
+  form: '.form',
+  formLabel: '.popup__label',
+  formInput: '.form__input',
+  formInputError: 'form__input_type_error',
+  formSpan: '.form__input-error',
+  inactiveButtonSubmit: 'form__submit-button_invalid',
+  fromButtonSubmit: '.form__submit-button',
+}
+enableValidation(configForm);
+
 
