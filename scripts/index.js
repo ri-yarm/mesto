@@ -47,8 +47,6 @@ btnProfileEdit.addEventListener('click', () => {
   showPopup(popupProfile);
   inputName.value = profileTitle.textContent;
   inputJob.value = profileSubtitle.textContent;
-
-  toggleButtonState()
 });
 
 //изменение и сохранение профиля
