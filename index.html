@@ -34,11 +34,11 @@
     <footer class="footer">
       <p class="footer__text">&copy;&nbsp;2020 Mesto Russia</p>
     </footer>
-    <div class="popup" id="popupProfile">
+    <div class="popup popupProfile">
       <div class="popup__container">
         <button type="button" class="button popup__exit-button" aria-label=" Закрыть попап."></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form action="#" class="form" name="popupForm" autocomplete="on" novalidate>
+        <form action="#" class="form" name="profile" autocomplete="on" novalidate>
           <label class="form__label">
             <input id="name-input" name="formName" type="text" class="form__input form__input_type_name" placeholder="Введите ваше имя" required minlength="2" maxlength="40">
             <span class="name-input-error form__input-error"></span>
@@ -51,13 +51,13 @@
         </form>
       </div>
     </div>
-    <div class="popup" id="popupCard">
+    <div class="popup popupCard">
       <div class="popup__container">
         <button type="button" class="button popup__exit-button" aria-label=" Закрыть попап."></button>
         <h2 class="popup__title">Новое Место</h2>
-        <form action="#" class="form" name="popupForm" autocomplete="on" novalidate>
+        <form action="#" class="form" name="formCreateCard" autocomplete="on" novalidate>
           <label class="form__label">
-            <input id="mesto-input" name="formMesto" type="text" class="form__input form__input_type_name" placeholder="Название" required minlength="2" maxlength="30">
+            <input id="mesto-input" name="formNameMesto" type="text" class="form__input form__input_type_name" placeholder="Название" required minlength="2" maxlength="30">
             <span class="mesto-input-error form__input-error"></span>
           </label>
           <label class="form__label">
