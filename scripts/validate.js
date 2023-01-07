@@ -16,6 +16,17 @@ function hideInputError(formElement, inputElement, config) {
   errorElement.textContent = '';
 };
 
+//функция удаляющая ошибки при отркытии попапа, если они были
+//принимает попап у которого нужно удалить ошибки(вызывается при открытии попапа *index.js*)
+function hideErrorsIfClosed(popup) {
+  const formElement = popup.querySelector(configForm.form);
+  const inputElements = formElement.querySelectorAll(configForm.formInput);
+  
+  inputElements.forEach(inputElement => {
+    hideInputError(formElement, inputElement, configForm);
+  });
+}
+
 // проверка на валидность инпута для spana и input
 function checkValidity(formElement, inputElement, config) {
   if(!inputElement.validity.valid) {

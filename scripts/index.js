@@ -44,9 +44,13 @@ function closePopup(popup) {
 
 //открытие формы профиля
 btnProfileEdit.addEventListener('click', () => {
+  //удаляем ошибки span если они были
+  hideErrorsIfClosed(popupProfile)
+  //и только потом показываем попап
   showPopup(popupProfile);
   inputName.value = profileTitle.textContent;
   inputJob.value = profileSubtitle.textContent;
+  
 });
 
 //изменение и сохранение профиля
@@ -62,8 +66,13 @@ profileForm.addEventListener('submit', rewriteProfileSubmit);
 
 //открытие формы нового места
 btnAddCard.addEventListener('click', () => {
+  //удаляем ошибки span если они были
+  hideErrorsIfClosed(popupCards)
+
+  //сбрасываем форму при открытии
   cardForm.reset()
 
+  //и только потом показываем попап
   showPopup(popupCards);
 });
 
