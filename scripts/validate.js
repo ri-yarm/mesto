@@ -21,7 +21,7 @@ function hideInputError(formElement, inputElement, config) {
 function hideErrorsIfClosed(popup) {
   const formElement = popup.querySelector(configForm.form);
   const inputElements = formElement.querySelectorAll(configForm.formInput);
-  
+
   inputElements.forEach(inputElement => {
     hideInputError(formElement, inputElement, configForm);
   });
@@ -55,8 +55,8 @@ function toggleButtonState(inputList, buttonElement, config) {
 //функция установщик слушателей событий на форму
 function setEventListeners(formElement, config) {
   const inputList = Array.from(formElement.querySelectorAll(configForm.formInput)),
-        buttonElement = formElement.querySelector(config.fromButtonSubmit)
-        
+        buttonElement = formElement.querySelector(config.formButtonSubmit)
+
   toggleButtonState(inputList, buttonElement, config)
 
   //делегирование обработчиков
@@ -67,7 +67,7 @@ function setEventListeners(formElement, config) {
   });
 };
 
-//функция включения валидации. принимает параметр *config*. 
+//функция включения валидации. принимает параметр *config*.
 function enableValidation(config) {
   const formList = Array.from(document.querySelectorAll(configForm.form));
 

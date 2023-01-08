@@ -11,13 +11,16 @@ const btnsClose = document.querySelectorAll('.popup__exit-button');
 const popupProfile = document.querySelector('.popupProfile'),
       profileForm = popupProfile.querySelector('.form'),
       inputName = profileForm.querySelector('.form__input_type_name'),
+      inputProfileList = Array.from(profileForm.querySelector('.form__input'))
       inputJob = profileForm.querySelector('.form__input_type_job');
 
 //попап Добавления нового места
 const popupCards = document.querySelector('.popupCard'),
       cardForm = popupCards.querySelector('.form'),
       inputPlaceName = cardForm.querySelector('.form__input_type_name'),
-      inputLink = cardForm.querySelector('.form__input_type_link');
+      inputCardList = Array.from(cardForm.querySelectorAll('.form__input')),
+      inputLink = cardForm.querySelector('.form__input_type_link'),
+      buttonCardSubmit = cardForm.querySelector('.form__submit-button');
 
 const popupZoom = document.querySelector('#popupZoom');
 
@@ -30,6 +33,7 @@ function showPopup(popup) {
 
   document.addEventListener('keydown', handleEsc)
   document.addEventListener('mousedown', handleExitPopup)
+
 }
 
 //закрыть попап
@@ -64,17 +68,28 @@ function rewriteProfileSubmit(event) {
 }
 profileForm.addEventListener('submit', rewriteProfileSubmit);
 
+const configForm = {
+  form: '.form',
+  formLabel: '.popup__label',
+  formInput: '.form__input',
+  formInputError: 'form__input_type_error',
+  formSpan: '.form__input-error',
+  inactiveButtonSubmit: 'form__submit-button_invalid',
+  formButtonSubmit: '.form__submit-button',
+}
 //открытие формы нового места
 btnAddCard.addEventListener('click', () => {
   //удаляем ошибки span если они были
   hideErrorsIfClosed(popupCards)
-
   //сбрасываем форму при открытии
   cardForm.reset()
+  //проверяем кнопку перед открытием
+  toggleButtonState(inputCardList, buttonCardSubmit, configForm)
 
   //и только потом показываем попап
   showPopup(popupCards);
 });
+
 
 //попап зума карточек
 const popupImage = popupZoom.querySelector('.popup__image'),
@@ -174,15 +189,15 @@ function handleEsc(evt) {
 // включение валидации
 
 //конфиг формы
-const configForm = {
-  form: '.form',
-  formLabel: '.popup__label',
-  formInput: '.form__input',
-  formInputError: 'form__input_type_error',
-  formSpan: '.form__input-error',
-  inactiveButtonSubmit: 'form__submit-button_invalid',
-  fromButtonSubmit: '.form__submit-button',
-}
+// const configForm = {
+//   form: '.form',
+//   formLabel: '.popup__label',
+//   formInput: '.form__input',
+//   formInputError: 'form__input_type_error',
+//   formSpan: '.form__input-error',
+//   inactiveButtonSubmit: 'form__submit-button_invalid',
+//   formButtonSubmit: '.form__submit-button',
+// }
 enableValidation(configForm);
 
 
