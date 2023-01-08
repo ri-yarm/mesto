@@ -3,7 +3,7 @@ const profile = document.querySelector('.profile'),
       profileTitle = profile.querySelector('.profile__title'),
       profileSubtitle = profile.querySelector('.profile__subtitle'),
       btnAddCard = profile.querySelector('.profile__add-button');
-      
+
 
 const btnsClose = document.querySelectorAll('.popup__exit-button');
 
@@ -19,7 +19,7 @@ const popupCards = document.querySelector('.popupCard'),
       inputPlaceName = cardForm.querySelector('.form__input_type_name'),
       inputLink = cardForm.querySelector('.form__input_type_link');
 
-const popupZoom = document.querySelector('#popupZoom'); 
+const popupZoom = document.querySelector('#popupZoom');
 
 const templateCards = document.querySelector('#template-cards'),
       containerCards = document.querySelector('.places');
@@ -50,7 +50,7 @@ btnProfileEdit.addEventListener('click', () => {
   showPopup(popupProfile);
   inputName.value = profileTitle.textContent;
   inputJob.value = profileSubtitle.textContent;
-  
+
 });
 
 //изменение и сохранение профиля
@@ -152,8 +152,8 @@ defaultCards.forEach(({name, link}) => {
 
 // закрываем попапы на escape
 function handleEsc(evt) {
-  const openedPopup = document.querySelector('.popup_opened');
   if(evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
 
     closePopup(openedPopup)
   }
@@ -161,9 +161,9 @@ function handleEsc(evt) {
 
 // закрытие попапов на оверлей и на кнопку
   function handleExitPopup(evt) {
-  const openedPopup = document.querySelector('.popup_opened');
 
-  if((evt.target.classList.contains('popup_opened')) || (evt.target.classList.contains('popup__exit-button'))) {
+    if((evt.target.classList.contains('popup_opened')) || (evt.target.classList.contains('popup__exit-button'))) {
+    const openedPopup = document.querySelector('.popup_opened');
     closePopup(openedPopup)
   }
 }
@@ -173,7 +173,7 @@ function handleEsc(evt) {
 
 // включение валидации
 
-//конфиг формы 
+//конфиг формы
 const configForm = {
   form: '.form',
   formLabel: '.popup__label',
